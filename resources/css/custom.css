@@ -1,52 +1,258 @@
-/* box für img  PDF */
-
-.box {
-	position: relative;
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  /* background-image: linear-gradient(109deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 38%,transparent 38%, transparent 100%),linear-gradient(324deg, transparent 0%, transparent 31%,rgba(149, 149, 149,0.04) 31%, rgba(149, 149, 149,0.04) 99%,transparent 99%, transparent 100%),linear-gradient(259deg, transparent 0%, transparent 11%,rgba(149, 149, 149,0.04) 11%, rgba(149, 149, 149,0.04) 57%,transparent 57%, transparent 100%),linear-gradient(221deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 37%,transparent 37%, transparent 100%),linear-gradient(90deg, rgb(21, 25, 40),rgb(21, 25, 40)); */
+  background-color: #151928;
+  color: rgb(221, 221, 221);
+  height: 100vh;
+  font-size: 25px;
 }
 
-.box img, .box svg {
-	position: absolute;
-	left: 0;
-	top: 0;
+/* Wider step if needed */
+.step-xl {
+  width: 1600px;
 }
 
-/* logo and corporate design adjustments */
-#step-1 {
-	background-image: url("../img/logo_grey.png");
-	background-repeat: no-repeat;
-	background-position: right 0;
-	background-size: 3.8em;
+/* Different background style on first slide */
+.impress-on-step-1 {
+  background-image: linear-gradient(
+      109deg,
+      transparent 0%,
+      transparent 5%,
+      rgba(149, 149, 149, 0.04) 5%,
+      rgba(149, 149, 149, 0.04) 38%,
+      transparent 38%,
+      transparent 100%
+    ),
+    linear-gradient(
+      324deg,
+      transparent 0%,
+      transparent 31%,
+      rgba(149, 149, 149, 0.04) 31%,
+      rgba(149, 149, 149, 0.04) 99%,
+      transparent 99%,
+      transparent 100%
+    ),
+    linear-gradient(
+      259deg,
+      transparent 0%,
+      transparent 11%,
+      rgba(149, 149, 149, 0.04) 11%,
+      rgba(149, 149, 149, 0.04) 57%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      221deg,
+      transparent 0%,
+      transparent 5%,
+      rgba(149, 149, 149, 0.04) 5%,
+      rgba(149, 149, 149, 0.04) 37%,
+      transparent 37%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(21, 25, 40), rgb(21, 25, 40));
+  /* background-color: #232A44; */
+  color: rgb(245, 246, 255);
 }
 
-#step-1 h1 {
-	margin-right: 1.2em;
-	padding-left: .1em;
-	background-color: #b0d377;
+/* Enable pointer events for active slide (for video needed) */
+.impress-enabled .step.active,
+.impress-enabled .substep.active {
+  pointer-events: all;
 }
 
-#step-1 h2 {
-	position: relative;
-	z-index: -1;
-	margin-left: 1em;
-	padding-left: .1em;
-	background-color: #e3f0d2;
+/* ### SIZES, MARGINS AND GRID ### */
+
+ul ul {
+  margin-left: 1.3em;
 }
 
-.step h2:first-child {
-	padding-left: .2em;
-	color: white;
-	background-color: #01315f;
-	background-image: url("../img/logo.png");
-	background-repeat: no-repeat;
-	background-position: right .2em bottom -.2em;
-	background-size: 1.6em;
+ol ol {
+  margin-left: 1.3em;
 }
 
-.step h2:first-child + h3 {
-	position: relative;
-	z-index: -1;
-	margin-right: 4em;
-	padding-left: 1em;
-	background-color: #e3f0d2;
+.present .network {
+  height: 500px;
+  border: 1px solid lightgray;
+  pointer-events: auto;
 }
 
+a {
+  color: #afb7d5;
+  font-weight: 200;
+  letter-spacing: 0.8rem;
+}
+
+a:link,
+a:hover,
+a:focus,
+a:visited {
+  color: #afb7d5;
+}
+
+li:before {
+  color: #b98f40;
+}
+
+.gh-icon,
+.mastodon-icon {
+  position: relative;
+  top: 5px;
+  width: 30px;
+}
+
+.indent {
+  margin-left: 3rem;
+}
+
+/* Grid */
+
+.grid-center {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-tmp {
+  display: grid;
+  grid-template-rows: minmax(auto, 650px);
+}
+
+/* Images */
+
+.img-div {
+  display: grid;
+  justify-content: center;
+}
+
+.img-max {
+  max-height: 40em;
+  width: auto;
+}
+
+/* Iframe */
+
+iframe {
+  width: 100%;
+  min-height: 40em;
+}
+
+/* Video */
+
+video {
+  width: 100%;
+  max-height: 40em;
+  pointer-events: auto;
+  margin: 0.5em auto;
+}
+
+/* ### COLOURS AND DEFIGNS ### */
+
+.bg-blue {
+  background-color: #232a44;
+}
+
+.blue {
+  color: #7987b9;
+}
+
+.blue-l2 {
+  color: #afb7d5;
+}
+
+.gold {
+  color: #b98f40;
+}
+
+.gold-l2 {
+  color: #d5b985;
+}
+
+.gray {
+  color: rgb(138, 138, 138);
+}
+
+.underline {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.dotted {
+  border-bottom: 1px dotted rgb(221, 221, 221);
+}
+
+.highlight {
+  background: #b98f40;
+}
+
+.highlight-strech {
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+
+.outline {
+  outline: 1px solid rgb(134, 134, 134);
+}
+
+/* ### EFFECTS ### */
+
+/* Block Effekt */
+/* block-$ */
+.block-effect {
+  font-size: calc(8px + 3vw);
+}
+
+.block-reveal {
+  --t: calc(var(--td) + var(--d));
+
+  color: transparent;
+  padding: 4px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.block-reveal::after {
+  content: "";
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards,
+    revealingOut var(--td) var(--t) forwards;
+}
+/* animations */
+@keyframes revealBlock {
+  100% {
+    color: #d8d8d8;
+  }
+}
+
+@keyframes revealingIn {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
